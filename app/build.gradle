@@ -1,0 +1,48 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 20
+    buildToolsVersion "25.0.1"
+    defaultConfig {
+        applicationId "com.yuntongxun.yxw"
+        minSdkVersion 14
+        versionCode 18
+        versionName "5.3.1r"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+    productFlavors {
+        Yuntx_Android_Demo {
+            minSdkVersion 14
+            applicationId 'com.yuntongxun.yxw'
+            versionCode 18
+            versionName '5.3.1r'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile files('libs/pinyin4j-2.5.0.jar')
+    compile files('libs/universal-image-loader-1.9.3.jar')
+    compile files('libs/BaiduLBS_Android.jar')
+    compile files('libs/bugly_crash_release.jar')
+    compile files('libs/locSDK_6.13.jar')
+    compile files('libs/jsoup-1.7.1.jar')
+    compile files('libs/Yuntx_IMLib_v5.3.1r.jar')
+    compile project(':redpacketlibrary')
+    compile 'com.android.support:appcompat-v7:20.0.0'
+    compile 'com.jakewharton:butterknife:8.5.1'
+    compile 'com.android.support:support-v4:20.0.0'
+    compile project(':BQMM_Lib')
+    compile 'com.google.code.gson:gson:2.8.0'
+}
